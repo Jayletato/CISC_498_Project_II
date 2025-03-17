@@ -12,7 +12,7 @@ DATABASE_URL = os.getenv('DATABASE_URL')
 
 # 
 endpoint = DATABASE_URL + 'search?'
-query = 'Where Blue Light BLooms Origami Angel'
+query = 'Runaway Phoneboy'
 PARAMS = {'part':'snippet','q':query,'key':YT_KEY}
 
 # Example usage
