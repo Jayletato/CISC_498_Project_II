@@ -8,14 +8,21 @@ import androidx.fragment.app.FragmentTransaction;
 
 import android.service.voice.VoiceInteractionSession;
 import android.util.Log;
+import android.view.Gravity;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.Button;
+import android.widget.EditText;
+import android.widget.LinearLayout;
+import android.widget.PopupWindow;
+import android.widget.Toast;
 
 import com.justinjoseph.mulink_test2.databinding.ActivityMainBinding;
 
 import java.lang.reflect.Array;
 import java.util.ArrayList;
+import java.util.zip.Inflater;
 
 /**
  * A simple {@link Fragment} subclass.
@@ -23,22 +30,15 @@ import java.util.ArrayList;
  * create an instance of this fragment.
  */
 public class MusicFragment extends Fragment implements View.OnClickListener{
-
-    // TODO: Rename parameter arguments, choose names that match
-    // the fragment initialization parameters, e.g. ARG_ITEM_NUMBER
-    private static final String ARG_PARAM1 = "param1";
-    private static final String ARG_PARAM2 = "param2";
-
-    // TODO: Rename and change types of parameters
+    private FragmentManager fragmentManager;
+    private FragmentTransaction transaction;
+    private View myFragmentView;
+    private PopupWindow popupWindow;
+    private Button addPlaylistButton;
 
     public MusicFragment() {
         // Required empty public constructor
     }
-
-    // Boiler plate? //
-
-    // TODO: Rename and change types and number of parameters
-    // //
 
     //Boiler plate?
     public static MusicFragment newInstance(ActivityMainBinding binding) {
@@ -51,26 +51,6 @@ public class MusicFragment extends Fragment implements View.OnClickListener{
     @Override
     public void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        // Boiler plate?
-        FragmentManager fragmentManager = getActivity().getSupportFragmentManager();
-//        FragmentManager parentManager = fragmentManager.getPrimaryNavigationFragment().getParentFragmentManager();
-        FragmentTransaction transaction = fragmentManager.beginTransaction();
-
-        Song testSong1 = new Song("https://youtu.be/YzzcKXXjxYY?si=h3rgm4XgkGfrzScr", "Runaway", "MOVING OUT", "Phoneboy", "https://i.ytimg.com/vi/QTaHmSR5Vzw/default.jpg");
-        Song testSong2 = new Song("https://youtu.be/heyMNhMOa3c?si=2qPhwzFY76St--ci", "[spoons rattling]", "GAMI GANG", "Origami Angel", "https://i.ytimg.com/vi/heyMNhMOa3c/default.jpg");
-//        Song[] songs = {testSong1, testSong2};
-        ArrayList<Song> testArrayList = new ArrayList<Song>();
-        testArrayList.add(testSong1);
-        testArrayList.add(testSong2);
-
-        Playlist testPlaylist = new Playlist(testArrayList, "https://i.ytimg.com/vi/heyMNhMOa3c/default.jpg", "My favorite songs");
-        Playlist testPlaylist2 = new Playlist(testArrayList, "https://i.ytimg.com/vi/heyMNhMOa3c/default.jpg", "My second favorite songs");
-        addPlaylist(testPlaylist, transaction);
-        addPlaylist(testPlaylist2, transaction);
-        transaction.commit();
-//        addPlaylist(new Song(), fragmentManager);
-
-
     }
 
     //Takes a Playlist and FragmentManager, creates a new song fragment and adds it to the song fragment container
@@ -84,13 +64,71 @@ public class MusicFragment extends Fragment implements View.OnClickListener{
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
                              Bundle savedInstanceState) {
         // Inflate the layout for this fragment
-        return inflater.inflate(R.layout.fragment_music, container, false);
+        myFragmentView = inflater.inflate(R.layout.fragment_music, container, false);
+
+        // Boiler plate?
+        fragmentManager = getActivity().getSupportFragmentManager();
+//        FragmentManager parentManager = fragmentManager.getPrimaryNavigationFragment().getParentFragmentManager();
+        transaction = fragmentManager.beginTransaction();
+
+        Song testSong1 = new Song("https://youtu.be/YzzcKXXjxYY?si=h3rgm4XgkGfrzScr", "Runaway", "MOVING OUT", "Phoneboy", "https://i.ytimg.com/vi/QTaHmSR5Vzw/default.jpg");
+        Song testSong2 = new Song("https://youtu.be/heyMNhMOa3c?si=2qPhwzFY76St--ci", "[spoons rattling]", "GAMI GANG", "Origami Angel", "https://i.ytimg.com/vi/heyMNhMOa3c/default.jpg");
+//        Song[] songs = {testSong1, testSong2};
+        ArrayList<Song> testArrayList = new ArrayList<Song>();
+        testArrayList.add(testSong1);
+        testArrayList.add(testSong2);
+
+        Playlist testPlaylist = new Playlist(testArrayList, "https://i.ytimg.com/vi/heyMNhMOa3c/default.jpg", "My favorite songs");
+        Playlist testPlaylist2 = new Playlist(testArrayList, "https://i.ytimg.com/vi/heyMNhMOa3c/default.jpg", "My second favorite songs");
+        addPlaylist(testPlaylist, transaction);
+        addPlaylist(testPlaylist2, transaction);
+        transaction.commit();
+        transaction.setReorderingAllowed(true);
+//        addPlaylist(new Song(), fragmentManager);
+
+
+        addPlaylistButton = myFragmentView.findViewById(R.id.add_playlist_button);
+        addPlaylistButton.setOnClickListener(v -> {
+            Log.d(".MusicFragment", "Button pressed :D");
+
+            drawPopUpWindow(v, inflater);
+
+        });
+        return myFragmentView;
     }
 
     @Override
     public void onClick(View v) {
         Log.d(".MusicFragment.java", String.valueOf(v));
         return;
+    }
+
+    public void drawPopUpWindow(View v, LayoutInflater inflater) {
+        //Draw a pop up window
+        View popupView = inflater.inflate(R.layout.ap_popup_layout, null);
+        popupWindow = new PopupWindow(popupView, LinearLayout.LayoutParams.WRAP_CONTENT, LinearLayout.LayoutParams.WRAP_CONTENT, true);
+        popupWindow.showAtLocation(myFragmentView, Gravity.CENTER,0,0);//
+
+        // Functionality for add and cancel buttons
+        Button addPlaylistConfirm = popupView.findViewById(R.id.add_confirm_button);
+        Button addPlaylistCancel = popupView.findViewById(R.id.add_cancel_button);
+
+        addPlaylistConfirm.setOnClickListener(vCo -> {
+            try {
+                FragmentTransaction newTransaction = fragmentManager.beginTransaction();
+                EditText enteredPlaylistName = popupView.findViewById(R.id.playlist_enter_name);
+                addPlaylist(new Playlist(new ArrayList<Song>(), "", enteredPlaylistName.getText().toString()), newTransaction);
+                newTransaction.commit();
+                Toast.makeText(v.getContext(), "Added playlist", Toast.LENGTH_SHORT).show();
+            } catch (Exception e) {
+                Log.d(".MusicFragment.java/drawPopUpWindow", "Error creating playlist");
+            }
+            popupWindow.dismiss();
+        });
+
+        addPlaylistCancel.setOnClickListener(vCa -> {
+            popupWindow.dismiss();
+        });
     }
 
 }

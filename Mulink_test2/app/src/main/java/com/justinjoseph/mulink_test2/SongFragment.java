@@ -8,6 +8,7 @@ import androidx.annotation.Nullable;
 import androidx.collection.LruCache;
 import androidx.fragment.app.Fragment;
 
+import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -65,6 +66,7 @@ public class SongFragment extends Fragment {
             }
         });
 
+        Log.d(".SongFragment.java", "returning imageLoader");
         return imageLoader;
     }
 

@@ -6,4 +6,7 @@
     <string name="tab2">Settings</string>
     <!-- TODO: Remove or change this placeholder text -->
     <string name="hello_blank_fragment">Hello blank fragment</string>
+    <string name="add_playlist_button_text">Add Playlist</string>
+    <string name="add_playlist_confirm">Add</string>
+    <string name="add_playlist_cancel">Cancel</string>
 </resources>
