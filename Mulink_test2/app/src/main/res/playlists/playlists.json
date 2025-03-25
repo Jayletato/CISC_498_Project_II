@@ -1,0 +1,37 @@
+{
+  "playlists": [
+    {
+      "playlist_name": "My favorite songs",
+      "songs":[
+        {
+          "song_name": "Runaway",
+          "album_name":  "MOVING OUT",
+          "artist_name": "Phoneboy",
+          "song_url": "https://youtu.be/YzzcKXXjxYY?si=h3rgm4XgkGfrzScr",
+          "song_thumbnail":  "https://i.ytimg.com/vi/QTaHmSR5Vzw/default.jpg"
+        },
+        {
+          "song_name": "[spoons rattling]",
+          "album_name":  "GAMI GANG",
+          "artist_name": "Origami Angel",
+          "song_url": "https://youtu.be/heyMNhMOa3c?si=2qPhwzFY76St--ci",
+          "song_thumbnail":  "https://i.ytimg.com/vi/heyMNhMOa3c/default.jpg"
+        }
+      ],
+      "playlist_thumbnail": "https://i.ytimg.com/vi/heyMNhMOa3c/default.jpg"
+    },
+    {
+      "playlist_name": "My second favorite songs",
+      "songs": [
+        {
+          "song_name": "The Title Track",
+          "album_name":  "Somewhere City",
+          "artist_name": "Origami Angel",
+          "song_url": "https://youtu.be/3Tv-PfQpC3s",
+          "song_thumbnail":  "https://i.ytimg.com/vi/3Tv-PfQpC3s/default.jpg"
+        }
+      ],
+      "playlist_thumbnail": "https://i.ytimg.com/vi/3Tv-PfQpC3s/default.jpg"
+    }
+  ]
+}

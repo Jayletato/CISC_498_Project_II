@@ -1,0 +1,50 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="wrap_content"
+    android:layout_height="wrap_content"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:orientation="vertical"
+    android:background="@color/cardview_dark_background"
+    android:padding="10dp">
+
+    <androidx.appcompat.widget.Toolbar
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_gravity="start"
+        android:background="@color/cardview_dark_background"
+        app:titleTextColor="@color/white"
+        app:title="Add a playlist"/>
+
+    <EditText
+        android:id="@+id/playlist_enter_name"
+        android:layout_width="match_parent"
+        android:layout_height="48sp"
+        android:layout_marginVertical="30sp"
+        android:hint="Playlist Name"
+        android:textColorHint="@color/white"
+        android:textColor="@color/white"
+        />
+
+    <LinearLayout
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal">
+        <Button
+            android:id="@+id/add_confirm_button"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/add_playlist_confirm"
+            android:textColor="@color/white"
+            android:layout_marginHorizontal="10sp"
+            android:layout_marginRight="10sp"/>
+        <Button
+            android:id="@+id/add_cancel_button"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/add_playlist_cancel"
+            android:textColor="@color/white"
+            android:layout_marginHorizontal="10sp"
+            android:layout_marginLeft="10sp"/>
+    </LinearLayout>
+
+</LinearLayout>
