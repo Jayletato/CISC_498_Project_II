@@ -1,0 +1,13 @@
+<resources>
+    <string name="app_name">MongoDBFlaskListView</string>
+    <string name="add_customer">Add Customer</string>
+    <string name="refresh">Refresh</string>
+    <string name="button_confirm">Confirm</string>
+    <string name="button_cancel">Cancel</string>
+    <string name="name_hint">Enter Name</string>
+    <string name="address_hint">Enter Address</string>
+    <string name="enter_hint">Enter Comment</string>
+    <string name="add_activity_title">Enter Customer Details</string>
+    <string name="url_string">http://192.168.1.18:5000</string>
+    <string name="phone_hint">Enter Phone</string>
+</resources>

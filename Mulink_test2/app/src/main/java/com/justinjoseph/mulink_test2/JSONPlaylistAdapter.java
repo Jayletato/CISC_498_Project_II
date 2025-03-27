@@ -7,8 +7,10 @@ import org.json.JSONObject;
 
 
 public class JSONPlaylistAdapter {
-    public void jsonFileReader(){
-        //return jsonobject
-        return;
+    public JSONObject jsonFileReader(){
+        //TODO: Make this class able to read and write to a json file
+        JSONObject playlistFile = new JSONObject();
+
+        return playlistFile;
     }
 }
