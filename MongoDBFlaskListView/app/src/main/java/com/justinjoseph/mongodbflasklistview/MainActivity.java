@@ -7,6 +7,7 @@ import android.view.Gravity;
 import android.view.LayoutInflater;
 import android.view.PixelCopy;
 import android.view.View;
+import android.widget.AdapterView;
 import android.widget.Button;
 import android.widget.EditText;
 import android.widget.ImageButton;
@@ -83,8 +84,21 @@ public class MainActivity extends AppCompatActivity {
                     }
                 }
                 CustomerAdapter adapter = new CustomerAdapter(customers, list.getContext());
+
+//                view.setOnClickListener(v -> {
+//    //            View commentView = LayoutInflater.from(context).inflate(R.layout.);
+//                    Intent intent = new Intent(this.context, AddCustomerActivity.class);
+//                    startActivity(intent);
+//                    Log.d(".CustomerAdapter.onClick", "started activity");
+//                });
                 list.setAdapter(adapter);
-                //list.setOnItemClickListener(adapter);
+                list.setOnItemClickListener((parent, view, position, id) -> {
+                    Intent intent = new Intent(MainActivity.this, CommentsActivity.class);
+                    intent.putExtra("customer", customers.get(position));
+                    startActivity(intent);
+                    Log.d(".CustomerAdapter.onClick", "started activity");
+
+                });
         }, error -> {
             error.printStackTrace();
                 Log.d("./MainActivity/ERROR", "Error loading content.");

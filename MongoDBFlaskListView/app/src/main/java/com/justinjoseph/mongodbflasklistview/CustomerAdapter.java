@@ -1,6 +1,8 @@
 package com.justinjoseph.mongodbflasklistview;
 
 import android.content.Context;
+import android.content.Intent;
+import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -9,7 +11,7 @@ import android.widget.TextView;
 
 import java.util.List;
 
-public class CustomerAdapter extends BaseAdapter {
+public class CustomerAdapter extends BaseAdapter{
 
     List<Customer> customers;
     private Context context;
@@ -51,11 +53,6 @@ public class CustomerAdapter extends BaseAdapter {
         phone.setText(customers.get(i).getPhone());
         address.setText(customers.get(i).getAddress());
 //        comment.setText(customers.get(i).getComment());
-
-        // Add onClick listener on the view to show the comments
-        view.setOnClickListener(v -> {
-            View commentView = LayoutInflater.from(context).inflate(R.layout.)
-        });
 
         return view;
     }

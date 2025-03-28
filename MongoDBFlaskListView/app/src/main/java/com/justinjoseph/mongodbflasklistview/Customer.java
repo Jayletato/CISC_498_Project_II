@@ -6,9 +6,10 @@ import org.json.JSONArray;
 import org.json.JSONException;
 import org.json.JSONObject;
 
+import java.io.Serializable;
 import java.util.ArrayList;
 
-public class Customer {
+public class Customer implements Serializable {
     protected String _id;
     protected String name;
     protected String address;
@@ -81,6 +82,7 @@ public class Customer {
     }
     public void addComment(String comment){
         comments.add(comment);
+
     }
 
     public void removeComment(int index) {

@@ -1,5 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:id="@+id/comments_activity"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     xmlns:app="http://schemas.android.com/apk/res-auto"
@@ -9,64 +10,67 @@
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:orientation="horizontal">
+
+        <ImageButton
+            android:id="@+id/comment_back"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:src="@android:drawable/ic_menu_revert"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintLeft_toLeftOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            android:background="@android:color/transparent" />
         <Toolbar
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             app:layout_constraintTop_toTopOf="parent"
             app:layout_constraintBottom_toBottomOf="parent"
-            app:layout_constraintLeft_toLeftOf="parent"
+            app:layout_constraintLeft_toRightOf="@id/comment_back"
             android:title="Edit Comments"/>
-        <ImageButton
-            android:id="@+id/add_comment_button"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            app:layout_constraintTop_toTopOf="parent"
-            app:layout_constraintBottom_toBottomOf="parent"
-            app:layout_constraintRight_toRightOf="parent"
-            app:srcCompat="@android:drawable/ic_menu_add"
-            android:background="@android:color/transparent"
-            android:gravity="end"
-            android:layout_margin="20sp"/>
+
 
 
     </androidx.constraintlayout.widget.ConstraintLayout>
-    <ScrollView
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:padding="10sp"
+        >
+        <EditText
+            android:id="@+id/comment_text_container"
+            android:layout_width="0sp"
+            android:layout_height="wrap_content"
+            app:layout_constraintLeft_toLeftOf="parent"
+            app:layout_constraintRight_toLeftOf="@id/add_comment_button"
+            app:layout_constraintTop_toTopOf="parent"
+            app:layout_constraintBottom_toBottomOf="parent"
+
+            android:hint="Add comment"
+
+            android:layout_marginHorizontal="10sp"/>
+
+        <ImageButton
+            android:id="@+id/add_comment_button"
+            android:layout_width="wrap_content"
+
+            android:layout_height="wrap_content"
+            android:background="@android:color/transparent"
+
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintRight_toRightOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+
+            app:srcCompat="@android:drawable/ic_menu_add" />
+    </androidx.constraintlayout.widget.ConstraintLayout>
+
+    <ListView
+        android:id="@+id/comments_listview"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:padding="20sp"
         android:backgroundTint="@color/cardview_dark_background">
-        <androidx.constraintlayout.widget.ConstraintLayout
-            android:id="@+id/comment_constraint_container"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            >
-            <EditText
-                android:layout_width="0sp"
-                android:layout_height="wrap_content"
-
-                app:layout_constraintLeft_toLeftOf="parent"
-                app:layout_constraintRight_toLeftOf="@id/delete_comment_button"
-                app:layout_constraintTop_toTopOf="parent"
-                app:layout_constraintBottom_toBottomOf="parent"
-
-                android:hint="Add comment"
-
-                android:layout_marginHorizontal="10sp"/>
-            <ImageButton
-                android:id="@+id/delete_comment_button"
-                app:srcCompat="@android:drawable/ic_menu_delete"
-
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-
-                app:layout_constraintRight_toRightOf="parent"
-                app:layout_constraintTop_toTopOf="parent"
-                app:layout_constraintBottom_toBottomOf="parent"
-
-                android:background="@android:color/transparent"
-                />
-        </androidx.constraintlayout.widget.ConstraintLayout>
-    </ScrollView>
+    </ListView>
 
 
 
