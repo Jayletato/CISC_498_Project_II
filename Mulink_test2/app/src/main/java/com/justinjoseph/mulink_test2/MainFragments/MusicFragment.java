@@ -1,4 +1,4 @@
-package com.justinjoseph.mulink_test2;
+package com.justinjoseph.mulink_test2.MainFragments;
 
 import android.os.Bundle;
 
@@ -6,7 +6,6 @@ import androidx.fragment.app.Fragment;
 import androidx.fragment.app.FragmentManager;
 import androidx.fragment.app.FragmentTransaction;
 
-import android.service.voice.VoiceInteractionSession;
 import android.util.Log;
 import android.view.Gravity;
 import android.view.LayoutInflater;
@@ -18,11 +17,13 @@ import android.widget.LinearLayout;
 import android.widget.PopupWindow;
 import android.widget.Toast;
 
+import com.justinjoseph.mulink_test2.MainFragments.MusicSubFragments.Classes.Playlist;
+import com.justinjoseph.mulink_test2.MainFragments.MusicSubFragments.PlaylistWidgetFragment;
+import com.justinjoseph.mulink_test2.R;
+import com.justinjoseph.mulink_test2.MainFragments.MusicSubFragments.Classes.Song;
 import com.justinjoseph.mulink_test2.databinding.ActivityMainBinding;
 
-import java.lang.reflect.Array;
 import java.util.ArrayList;
-import java.util.zip.Inflater;
 
 /**
  * A simple {@link Fragment} subclass.

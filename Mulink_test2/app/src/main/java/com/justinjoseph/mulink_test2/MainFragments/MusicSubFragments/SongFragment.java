@@ -1,4 +1,4 @@
-package com.justinjoseph.mulink_test2;
+package com.justinjoseph.mulink_test2.MainFragments.MusicSubFragments;
 
 import android.content.Context;
 import android.graphics.Bitmap;
@@ -18,6 +18,8 @@ import com.android.volley.RequestQueue;
 import com.android.volley.toolbox.ImageLoader;
 import com.android.volley.toolbox.NetworkImageView;
 import com.android.volley.toolbox.Volley;
+import com.justinjoseph.mulink_test2.R;
+import com.justinjoseph.mulink_test2.MainFragments.MusicSubFragments.Classes.Song;
 
 //**
 // * A simple {@link Fragment} subclass.

@@ -1,4 +1,4 @@
-package com.justinjoseph.mulink_test2;
+package com.justinjoseph.mulink_test2.MainFragments.MusicSubFragments;
 
 import android.os.Bundle;
 
@@ -9,6 +9,9 @@ import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 
+import com.justinjoseph.mulink_test2.MainFragments.MusicSubFragments.Classes.Playlist;
+import com.justinjoseph.mulink_test2.R;
+import com.justinjoseph.mulink_test2.MainFragments.MusicSubFragments.Classes.Song;
 import com.justinjoseph.mulink_test2.databinding.FragmentPlaylistBinding;
 
 

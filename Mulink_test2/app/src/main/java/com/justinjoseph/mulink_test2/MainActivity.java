@@ -11,6 +11,9 @@ import androidx.fragment.app.Fragment;
 import androidx.fragment.app.FragmentManager;
 import androidx.fragment.app.FragmentTransaction;
 
+import com.justinjoseph.mulink_test2.MainFragments.HomeFragment;
+import com.justinjoseph.mulink_test2.MainFragments.MusicFragment;
+import com.justinjoseph.mulink_test2.MainFragments.SettingsFragment;
 import com.justinjoseph.mulink_test2.databinding.ActivityMainBinding;
 
 public class MainActivity extends AppCompatActivity {

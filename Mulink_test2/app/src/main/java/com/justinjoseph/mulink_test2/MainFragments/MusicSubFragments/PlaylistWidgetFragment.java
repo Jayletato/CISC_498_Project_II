@@ -1,4 +1,4 @@
-package com.justinjoseph.mulink_test2;
+package com.justinjoseph.mulink_test2.MainFragments.MusicSubFragments;
 
 import android.content.Context;
 import android.graphics.Bitmap;
@@ -14,17 +14,14 @@ import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
-import android.widget.Button;
-import android.widget.LinearLayout;
 import android.widget.TextView;
 
 import com.android.volley.RequestQueue;
 import com.android.volley.toolbox.ImageLoader;
 import com.android.volley.toolbox.NetworkImageView;
 import com.android.volley.toolbox.Volley;
-import com.justinjoseph.mulink_test2.databinding.ActivityMainBinding;
-
-import org.w3c.dom.Text;
+import com.justinjoseph.mulink_test2.MainFragments.MusicSubFragments.Classes.Playlist;
+import com.justinjoseph.mulink_test2.R;
 
 public class PlaylistWidgetFragment extends Fragment implements View.OnClickListener {
     private final Context context;

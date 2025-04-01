@@ -1,4 +1,4 @@
-package com.justinjoseph.mulink_test2;
+package com.justinjoseph.mulink_test2.MainFragments.MusicSubFragments.Classes;
 
 public class Song {
     protected String song_url;
