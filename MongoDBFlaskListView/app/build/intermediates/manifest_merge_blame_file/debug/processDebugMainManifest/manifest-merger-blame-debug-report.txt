@@ -1,0 +1,151 @@
+1<?xml version="1.0" encoding="utf-8"?>
+2<manifest xmlns:android="http://schemas.android.com/apk/res/android"
+3    package="com.justinjoseph.mongodbflasklistview"
+4    android:versionCode="1"
+5    android:versionName="1.0" >
+6
+7    <uses-sdk
+8        android:minSdkVersion="34"
+9        android:targetSdkVersion="34" />
+10
+11    <uses-permission android:name="android.permission.INTERNET" />
+11-->C:\Users\jayin\Desktop\HU\2024-2025\Spring\CISC_498_Project_II\MongoDBFlaskListView\app\src\main\AndroidManifest.xml:5:5-67
+11-->C:\Users\jayin\Desktop\HU\2024-2025\Spring\CISC_498_Project_II\MongoDBFlaskListView\app\src\main\AndroidManifest.xml:5:22-64
+12    <uses-permission android:name="android.permission.ACCESS_NETWORK_STATE" />
+12-->C:\Users\jayin\Desktop\HU\2024-2025\Spring\CISC_498_Project_II\MongoDBFlaskListView\app\src\main\AndroidManifest.xml:6:5-79
+12-->C:\Users\jayin\Desktop\HU\2024-2025\Spring\CISC_498_Project_II\MongoDBFlaskListView\app\src\main\AndroidManifest.xml:6:22-76
+13
+14    <permission
+14-->[androidx.core:core:1.13.0] C:\Users\jayin\.gradle\caches\8.9\transforms\9b67c2a778f51a5e9e875416b9e8356c\transformed\core-1.13.0\AndroidManifest.xml:22:5-24:47
+15        android:name="com.justinjoseph.mongodbflasklistview.DYNAMIC_RECEIVER_NOT_EXPORTED_PERMISSION"
+15-->[androidx.core:core:1.13.0] C:\Users\jayin\.gradle\caches\8.9\transforms\9b67c2a778f51a5e9e875416b9e8356c\transformed\core-1.13.0\AndroidManifest.xml:23:9-81
+16        android:protectionLevel="signature" />
+16-->[androidx.core:core:1.13.0] C:\Users\jayin\.gradle\caches\8.9\transforms\9b67c2a778f51a5e9e875416b9e8356c\transformed\core-1.13.0\AndroidManifest.xml:24:9-44
+17
+18    <uses-permission android:name="com.justinjoseph.mongodbflasklistview.DYNAMIC_RECEIVER_NOT_EXPORTED_PERMISSION" />
+18-->[androidx.core:core:1.13.0] C:\Users\jayin\.gradle\caches\8.9\transforms\9b67c2a778f51a5e9e875416b9e8356c\transformed\core-1.13.0\AndroidManifest.xml:26:5-97
+18-->[androidx.core:core:1.13.0] C:\Users\jayin\.gradle\caches\8.9\transforms\9b67c2a778f51a5e9e875416b9e8356c\transformed\core-1.13.0\AndroidManifest.xml:26:22-94
+19
+20    <application
+20-->C:\Users\jayin\Desktop\HU\2024-2025\Spring\CISC_498_Project_II\MongoDBFlaskListView\app\src\main\AndroidManifest.xml:8:5-34:19
+21        android:allowBackup="true"
+21-->C:\Users\jayin\Desktop\HU\2024-2025\Spring\CISC_498_Project_II\MongoDBFlaskListView\app\src\main\AndroidManifest.xml:9:9-35
+22        android:appComponentFactory="androidx.core.app.CoreComponentFactory"
+22-->[androidx.core:core:1.13.0] C:\Users\jayin\.gradle\caches\8.9\transforms\9b67c2a778f51a5e9e875416b9e8356c\transformed\core-1.13.0\AndroidManifest.xml:28:18-86
+23        android:dataExtractionRules="@xml/data_extraction_rules"
+23-->C:\Users\jayin\Desktop\HU\2024-2025\Spring\CISC_498_Project_II\MongoDBFlaskListView\app\src\main\AndroidManifest.xml:10:9-65
+24        android:debuggable="true"
+25        android:extractNativeLibs="false"
+26        android:fullBackupContent="@xml/backup_rules"
+26-->C:\Users\jayin\Desktop\HU\2024-2025\Spring\CISC_498_Project_II\MongoDBFlaskListView\app\src\main\AndroidManifest.xml:11:9-54
+27        android:icon="@mipmap/ic_launcher"
+27-->C:\Users\jayin\Desktop\HU\2024-2025\Spring\CISC_498_Project_II\MongoDBFlaskListView\app\src\main\AndroidManifest.xml:12:9-43
+28        android:label="@string/app_name"
+28-->C:\Users\jayin\Desktop\HU\2024-2025\Spring\CISC_498_Project_II\MongoDBFlaskListView\app\src\main\AndroidManifest.xml:13:9-41
+29        android:roundIcon="@mipmap/ic_launcher_round"
+29-->C:\Users\jayin\Desktop\HU\2024-2025\Spring\CISC_498_Project_II\MongoDBFlaskListView\app\src\main\AndroidManifest.xml:14:9-54
+30        android:supportsRtl="true"
+30-->C:\Users\jayin\Desktop\HU\2024-2025\Spring\CISC_498_Project_II\MongoDBFlaskListView\app\src\main\AndroidManifest.xml:15:9-35
+31        android:testOnly="true"
+32        android:theme="@style/Theme.MongoDBFlaskListView"
+32-->C:\Users\jayin\Desktop\HU\2024-2025\Spring\CISC_498_Project_II\MongoDBFlaskListView\app\src\main\AndroidManifest.xml:16:9-58
+33        android:usesCleartextTraffic="true" >
+33-->C:\Users\jayin\Desktop\HU\2024-2025\Spring\CISC_498_Project_II\MongoDBFlaskListView\app\src\main\AndroidManifest.xml:17:9-44
+34        <activity
+34-->C:\Users\jayin\Desktop\HU\2024-2025\Spring\CISC_498_Project_II\MongoDBFlaskListView\app\src\main\AndroidManifest.xml:19:9-21:40
+35            android:name="com.justinjoseph.mongodbflasklistview.CommentsActivity"
+35-->C:\Users\jayin\Desktop\HU\2024-2025\Spring\CISC_498_Project_II\MongoDBFlaskListView\app\src\main\AndroidManifest.xml:20:13-45
+36            android:exported="false" />
+36-->C:\Users\jayin\Desktop\HU\2024-2025\Spring\CISC_498_Project_II\MongoDBFlaskListView\app\src\main\AndroidManifest.xml:21:13-37
+37        <activity
+37-->C:\Users\jayin\Desktop\HU\2024-2025\Spring\CISC_498_Project_II\MongoDBFlaskListView\app\src\main\AndroidManifest.xml:22:9-24:40
+38            android:name="com.justinjoseph.mongodbflasklistview.AddCustomerActivity"
+38-->C:\Users\jayin\Desktop\HU\2024-2025\Spring\CISC_498_Project_II\MongoDBFlaskListView\app\src\main\AndroidManifest.xml:23:13-48
+39            android:exported="false" />
+39-->C:\Users\jayin\Desktop\HU\2024-2025\Spring\CISC_498_Project_II\MongoDBFlaskListView\app\src\main\AndroidManifest.xml:24:13-37
+40        <activity
+40-->C:\Users\jayin\Desktop\HU\2024-2025\Spring\CISC_498_Project_II\MongoDBFlaskListView\app\src\main\AndroidManifest.xml:25:9-33:20
+41            android:name="com.justinjoseph.mongodbflasklistview.MainActivity"
+41-->C:\Users\jayin\Desktop\HU\2024-2025\Spring\CISC_498_Project_II\MongoDBFlaskListView\app\src\main\AndroidManifest.xml:26:13-41
+42            android:exported="true" >
+42-->C:\Users\jayin\Desktop\HU\2024-2025\Spring\CISC_498_Project_II\MongoDBFlaskListView\app\src\main\AndroidManifest.xml:27:13-36
+43            <intent-filter>
+43-->C:\Users\jayin\Desktop\HU\2024-2025\Spring\CISC_498_Project_II\MongoDBFlaskListView\app\src\main\AndroidManifest.xml:28:13-32:29
+44                <action android:name="android.intent.action.MAIN" />
+44-->C:\Users\jayin\Desktop\HU\2024-2025\Spring\CISC_498_Project_II\MongoDBFlaskListView\app\src\main\AndroidManifest.xml:29:17-69
+44-->C:\Users\jayin\Desktop\HU\2024-2025\Spring\CISC_498_Project_II\MongoDBFlaskListView\app\src\main\AndroidManifest.xml:29:25-66
+45
+46                <category android:name="android.intent.category.LAUNCHER" />
+46-->C:\Users\jayin\Desktop\HU\2024-2025\Spring\CISC_498_Project_II\MongoDBFlaskListView\app\src\main\AndroidManifest.xml:31:17-77
+46-->C:\Users\jayin\Desktop\HU\2024-2025\Spring\CISC_498_Project_II\MongoDBFlaskListView\app\src\main\AndroidManifest.xml:31:27-74
+47            </intent-filter>
+48        </activity>
+49
+50        <provider
+50-->[androidx.emoji2:emoji2:1.3.0] C:\Users\jayin\.gradle\caches\8.9\transforms\9a7344e1ecde226a7e958f676a52ef69\transformed\emoji2-1.3.0\AndroidManifest.xml:24:9-32:20
+51            android:name="androidx.startup.InitializationProvider"
+51-->[androidx.emoji2:emoji2:1.3.0] C:\Users\jayin\.gradle\caches\8.9\transforms\9a7344e1ecde226a7e958f676a52ef69\transformed\emoji2-1.3.0\AndroidManifest.xml:25:13-67
+52            android:authorities="com.justinjoseph.mongodbflasklistview.androidx-startup"
+52-->[androidx.emoji2:emoji2:1.3.0] C:\Users\jayin\.gradle\caches\8.9\transforms\9a7344e1ecde226a7e958f676a52ef69\transformed\emoji2-1.3.0\AndroidManifest.xml:26:13-68
+53            android:exported="false" >
+53-->[androidx.emoji2:emoji2:1.3.0] C:\Users\jayin\.gradle\caches\8.9\transforms\9a7344e1ecde226a7e958f676a52ef69\transformed\emoji2-1.3.0\AndroidManifest.xml:27:13-37
+54            <meta-data
+54-->[androidx.emoji2:emoji2:1.3.0] C:\Users\jayin\.gradle\caches\8.9\transforms\9a7344e1ecde226a7e958f676a52ef69\transformed\emoji2-1.3.0\AndroidManifest.xml:29:13-31:52
+55                android:name="androidx.emoji2.text.EmojiCompatInitializer"
+55-->[androidx.emoji2:emoji2:1.3.0] C:\Users\jayin\.gradle\caches\8.9\transforms\9a7344e1ecde226a7e958f676a52ef69\transformed\emoji2-1.3.0\AndroidManifest.xml:30:17-75
+56                android:value="androidx.startup" />
+56-->[androidx.emoji2:emoji2:1.3.0] C:\Users\jayin\.gradle\caches\8.9\transforms\9a7344e1ecde226a7e958f676a52ef69\transformed\emoji2-1.3.0\AndroidManifest.xml:31:17-49
+57            <meta-data
+57-->[androidx.lifecycle:lifecycle-process:2.6.2] C:\Users\jayin\.gradle\caches\8.9\transforms\ad6c264d7af25dbf70e4e162590fd87a\transformed\lifecycle-process-2.6.2\AndroidManifest.xml:29:13-31:52
+58                android:name="androidx.lifecycle.ProcessLifecycleInitializer"
+58-->[androidx.lifecycle:lifecycle-process:2.6.2] C:\Users\jayin\.gradle\caches\8.9\transforms\ad6c264d7af25dbf70e4e162590fd87a\transformed\lifecycle-process-2.6.2\AndroidManifest.xml:30:17-78
+59                android:value="androidx.startup" />
+59-->[androidx.lifecycle:lifecycle-process:2.6.2] C:\Users\jayin\.gradle\caches\8.9\transforms\ad6c264d7af25dbf70e4e162590fd87a\transformed\lifecycle-process-2.6.2\AndroidManifest.xml:31:17-49
+60            <meta-data
+60-->[androidx.profileinstaller:profileinstaller:1.4.0] C:\Users\jayin\.gradle\caches\8.9\transforms\98c3af84e5220b6cf33e68e1fd0aff4d\transformed\profileinstaller-1.4.0\AndroidManifest.xml:29:13-31:52
+61                android:name="androidx.profileinstaller.ProfileInstallerInitializer"
+61-->[androidx.profileinstaller:profileinstaller:1.4.0] C:\Users\jayin\.gradle\caches\8.9\transforms\98c3af84e5220b6cf33e68e1fd0aff4d\transformed\profileinstaller-1.4.0\AndroidManifest.xml:30:17-85
+62                android:value="androidx.startup" />
+62-->[androidx.profileinstaller:profileinstaller:1.4.0] C:\Users\jayin\.gradle\caches\8.9\transforms\98c3af84e5220b6cf33e68e1fd0aff4d\transformed\profileinstaller-1.4.0\AndroidManifest.xml:31:17-49
+63        </provider>
+64
+65        <receiver
+65-->[androidx.profileinstaller:profileinstaller:1.4.0] C:\Users\jayin\.gradle\caches\8.9\transforms\98c3af84e5220b6cf33e68e1fd0aff4d\transformed\profileinstaller-1.4.0\AndroidManifest.xml:34:9-52:20
+66            android:name="androidx.profileinstaller.ProfileInstallReceiver"
+66-->[androidx.profileinstaller:profileinstaller:1.4.0] C:\Users\jayin\.gradle\caches\8.9\transforms\98c3af84e5220b6cf33e68e1fd0aff4d\transformed\profileinstaller-1.4.0\AndroidManifest.xml:35:13-76
+67            android:directBootAware="false"
+67-->[androidx.profileinstaller:profileinstaller:1.4.0] C:\Users\jayin\.gradle\caches\8.9\transforms\98c3af84e5220b6cf33e68e1fd0aff4d\transformed\profileinstaller-1.4.0\AndroidManifest.xml:36:13-44
+68            android:enabled="true"
+68-->[androidx.profileinstaller:profileinstaller:1.4.0] C:\Users\jayin\.gradle\caches\8.9\transforms\98c3af84e5220b6cf33e68e1fd0aff4d\transformed\profileinstaller-1.4.0\AndroidManifest.xml:37:13-35
+69            android:exported="true"
+69-->[androidx.profileinstaller:profileinstaller:1.4.0] C:\Users\jayin\.gradle\caches\8.9\transforms\98c3af84e5220b6cf33e68e1fd0aff4d\transformed\profileinstaller-1.4.0\AndroidManifest.xml:38:13-36
+70            android:permission="android.permission.DUMP" >
+70-->[androidx.profileinstaller:profileinstaller:1.4.0] C:\Users\jayin\.gradle\caches\8.9\transforms\98c3af84e5220b6cf33e68e1fd0aff4d\transformed\profileinstaller-1.4.0\AndroidManifest.xml:39:13-57
+71            <intent-filter>
+71-->[androidx.profileinstaller:profileinstaller:1.4.0] C:\Users\jayin\.gradle\caches\8.9\transforms\98c3af84e5220b6cf33e68e1fd0aff4d\transformed\profileinstaller-1.4.0\AndroidManifest.xml:40:13-42:29
+72                <action android:name="androidx.profileinstaller.action.INSTALL_PROFILE" />
+72-->[androidx.profileinstaller:profileinstaller:1.4.0] C:\Users\jayin\.gradle\caches\8.9\transforms\98c3af84e5220b6cf33e68e1fd0aff4d\transformed\profileinstaller-1.4.0\AndroidManifest.xml:41:17-91
+72-->[androidx.profileinstaller:profileinstaller:1.4.0] C:\Users\jayin\.gradle\caches\8.9\transforms\98c3af84e5220b6cf33e68e1fd0aff4d\transformed\profileinstaller-1.4.0\AndroidManifest.xml:41:25-88
+73            </intent-filter>
+74            <intent-filter>
+74-->[androidx.profileinstaller:profileinstaller:1.4.0] C:\Users\jayin\.gradle\caches\8.9\transforms\98c3af84e5220b6cf33e68e1fd0aff4d\transformed\profileinstaller-1.4.0\AndroidManifest.xml:43:13-45:29
+75                <action android:name="androidx.profileinstaller.action.SKIP_FILE" />
+75-->[androidx.profileinstaller:profileinstaller:1.4.0] C:\Users\jayin\.gradle\caches\8.9\transforms\98c3af84e5220b6cf33e68e1fd0aff4d\transformed\profileinstaller-1.4.0\AndroidManifest.xml:44:17-85
+75-->[androidx.profileinstaller:profileinstaller:1.4.0] C:\Users\jayin\.gradle\caches\8.9\transforms\98c3af84e5220b6cf33e68e1fd0aff4d\transformed\profileinstaller-1.4.0\AndroidManifest.xml:44:25-82
+76            </intent-filter>
+77            <intent-filter>
+77-->[androidx.profileinstaller:profileinstaller:1.4.0] C:\Users\jayin\.gradle\caches\8.9\transforms\98c3af84e5220b6cf33e68e1fd0aff4d\transformed\profileinstaller-1.4.0\AndroidManifest.xml:46:13-48:29
+78                <action android:name="androidx.profileinstaller.action.SAVE_PROFILE" />
+78-->[androidx.profileinstaller:profileinstaller:1.4.0] C:\Users\jayin\.gradle\caches\8.9\transforms\98c3af84e5220b6cf33e68e1fd0aff4d\transformed\profileinstaller-1.4.0\AndroidManifest.xml:47:17-88
+78-->[androidx.profileinstaller:profileinstaller:1.4.0] C:\Users\jayin\.gradle\caches\8.9\transforms\98c3af84e5220b6cf33e68e1fd0aff4d\transformed\profileinstaller-1.4.0\AndroidManifest.xml:47:25-85
+79            </intent-filter>
+80            <intent-filter>
+80-->[androidx.profileinstaller:profileinstaller:1.4.0] C:\Users\jayin\.gradle\caches\8.9\transforms\98c3af84e5220b6cf33e68e1fd0aff4d\transformed\profileinstaller-1.4.0\AndroidManifest.xml:49:13-51:29
+81                <action android:name="androidx.profileinstaller.action.BENCHMARK_OPERATION" />
+81-->[androidx.profileinstaller:profileinstaller:1.4.0] C:\Users\jayin\.gradle\caches\8.9\transforms\98c3af84e5220b6cf33e68e1fd0aff4d\transformed\profileinstaller-1.4.0\AndroidManifest.xml:50:17-95
+81-->[androidx.profileinstaller:profileinstaller:1.4.0] C:\Users\jayin\.gradle\caches\8.9\transforms\98c3af84e5220b6cf33e68e1fd0aff4d\transformed\profileinstaller-1.4.0\AndroidManifest.xml:50:25-92
+82            </intent-filter>
+83        </receiver>
+84    </application>
+85
+86</manifest>

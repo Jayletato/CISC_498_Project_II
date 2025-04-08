@@ -17,11 +17,14 @@ import android.widget.LinearLayout;
 import android.widget.PopupWindow;
 import android.widget.Toast;
 
+import com.justinjoseph.mulink_test2.JSONPlaylistAdapter;
 import com.justinjoseph.mulink_test2.MainFragments.MusicSubFragments.Classes.Playlist;
 import com.justinjoseph.mulink_test2.MainFragments.MusicSubFragments.PlaylistWidgetFragment;
 import com.justinjoseph.mulink_test2.R;
 import com.justinjoseph.mulink_test2.MainFragments.MusicSubFragments.Classes.Song;
 import com.justinjoseph.mulink_test2.databinding.ActivityMainBinding;
+
+import org.json.JSONObject;
 
 import java.util.ArrayList;
 
@@ -95,6 +98,15 @@ public class MusicFragment extends Fragment implements View.OnClickListener{
             drawPopUpWindow(v, inflater);
 
         });
+
+        JSONPlaylistAdapter jsonPlaylistAdapter = new JSONPlaylistAdapter(getContext());
+//        JSONObject playlistsObject = jsonPlaylistAdapter.getPlaylists();
+//        Log.d("./MusicFragment", "playlists json object: " + playlistsObject.toString());
+        jsonPlaylistAdapter.setPlaylistArray();
+        for (int i = 0; i < jsonPlaylistAdapter.getPlaylistArray().size(); i++) {
+            Playlist playlist = jsonPlaylistAdapter.getPlaylistArray().get(i);
+            addPlaylist(playlist, transaction);
+        }
         return myFragmentView;
     }
 
