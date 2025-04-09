@@ -39,6 +39,7 @@ public class MusicFragment extends Fragment implements View.OnClickListener{
     private View myFragmentView;
     private PopupWindow popupWindow;
     private Button addPlaylistButton;
+    private JSONPlaylistAdapter jsonPlaylistAdapter;
 
     public MusicFragment() {
         // Required empty public constructor
@@ -59,6 +60,7 @@ public class MusicFragment extends Fragment implements View.OnClickListener{
 
     //Takes a Playlist and FragmentManager, creates a new song fragment and adds it to the song fragment container
     public void addPlaylist(Playlist playlist, FragmentTransaction transaction) {
+        // Adds a playlist's widget to the list of playlists
         PlaylistWidgetFragment playlistWidgetFragment = new PlaylistWidgetFragment(this.getContext(), playlist);
 //        playlistWidgetFragment.view.setOnClickListener(R.id.playlist_fragment_container);
         transaction.add(R.id.playlist_fragment_container, playlistWidgetFragment);
@@ -86,8 +88,6 @@ public class MusicFragment extends Fragment implements View.OnClickListener{
         Playlist testPlaylist2 = new Playlist(testArrayList, "https://i.ytimg.com/vi/heyMNhMOa3c/default.jpg", "My second favorite songs");
         addPlaylist(testPlaylist, transaction);
         addPlaylist(testPlaylist2, transaction);
-        transaction.commit();
-        transaction.setReorderingAllowed(true);
 //        addPlaylist(new Song(), fragmentManager);
 
 
@@ -99,7 +99,7 @@ public class MusicFragment extends Fragment implements View.OnClickListener{
 
         });
 
-        JSONPlaylistAdapter jsonPlaylistAdapter = new JSONPlaylistAdapter(getContext());
+        jsonPlaylistAdapter = new JSONPlaylistAdapter(getContext());
 //        JSONObject playlistsObject = jsonPlaylistAdapter.getPlaylists();
 //        Log.d("./MusicFragment", "playlists json object: " + playlistsObject.toString());
         jsonPlaylistAdapter.setPlaylistArray();
@@ -107,6 +107,9 @@ public class MusicFragment extends Fragment implements View.OnClickListener{
             Playlist playlist = jsonPlaylistAdapter.getPlaylistArray().get(i);
             addPlaylist(playlist, transaction);
         }
+        transaction.commit();
+        transaction.setReorderingAllowed(true);
+
         return myFragmentView;
     }
 
@@ -130,7 +133,9 @@ public class MusicFragment extends Fragment implements View.OnClickListener{
             try {
                 FragmentTransaction newTransaction = fragmentManager.beginTransaction();
                 EditText enteredPlaylistName = popupView.findViewById(R.id.playlist_enter_name);
-                addPlaylist(new Playlist(new ArrayList<Song>(), "", enteredPlaylistName.getText().toString()), newTransaction);
+                Playlist newPlaylist = new Playlist(new ArrayList<Song>(), "", enteredPlaylistName.getText().toString());
+                addPlaylist(newPlaylist, newTransaction);
+                jsonPlaylistAdapter.addPlaylistToFile(newPlaylist);
                 newTransaction.commit();
                 Toast.makeText(v.getContext(), "Added playlist", Toast.LENGTH_SHORT).show();
             } catch (Exception e) {

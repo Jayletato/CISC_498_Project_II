@@ -27,16 +27,78 @@ public class JSONPlaylistAdapter {
      * @Context is the constructor parameter
      * Holds an ArrayList of the playilsts which is constructed when method setPlaylistArray is run
      */
-    //TODO: add playlists functionality
+    //TODO: fix functionality for adding playlists to file
+    //TODO: fix functionality for creating a file when no file exists
     Context context;
-    String jsonFileName;
+    String jsonFileName = "playlists.json";
     ArrayList<Playlist> playlistArrayList;
 
     public JSONPlaylistAdapter(Context context){
         this.context = context;
+        setPlaylistArray();
+    }
+
+    public void addPlaylistToFile(Playlist playlist){
+        playlistArrayList.add(playlist);
+        JSONObject playlistsJsonObject = getPlaylists();
+        JSONArray playlistsJsonArray;
+
+        //Construct playlist as a JSONObject
+        try {
+            JSONObject newPlaylistJsonObject;
+
+            String playlistName = playlist.getPlaylistName();
+            JSONArray songs = new JSONArray();
+            String playlistThumbnail = playlist.getThumbnailURL();
+            if (playlistThumbnail.isEmpty()){
+                //playlistThumbnail
+                playlistThumbnail= "\"\""; // bandage fix
+            }
+
+            //Add songs to the songs JSONArray so they can be put into the playlist JSON object
+            for (int i = 0; i < playlist.getSongs().size(); i++) {
+                String songName = playlist.getSong(i).getSongName();
+                String albumName = playlist.getSong(i).getAlbumName();
+                String artistName = playlist.getSong(i).getArtistName();
+                String songUrl = playlist.getSong(i).getSongURL();
+                String songThumbnail = playlist.getSong(i).getThumbnailURL();
+                JSONObject song = new JSONObject(String.format("{\"song_name\": %s, \"album_name\": %s, \"artist_name\": %s, \"song_url\": %s, \"song_thumbnail\": %s}", songName, albumName, artistName, songUrl, songThumbnail));
+                songs.put(song);
+                Log.d("./JSONPlaylistAdapter/addPlaylistToFile", "Song: " + song.toString());
+            }
+            newPlaylistJsonObject = new JSONObject(String.format("{\"playlist_name\": \"%s\", \"songs\": %s, \"playlist_thumbnail\": %s}", playlistName,songs.toString(), playlistThumbnail));
+            Log.d("./JSONPlaylistAdapter/addPlaylistToFile", "playlistJsonObject: " + newPlaylistJsonObject.toString());
+
+            //Take the existing playlists.json data and append the new playlist to it
+            playlistsJsonArray = playlistsJsonObject.getJSONArray("playlists");
+            playlistsJsonArray.put(newPlaylistJsonObject);
+            Log.d("./JSONPlaylistAdapter/addPlaylistToFile", "playlistJsonArray: " + playlistsJsonArray.toString());
+
+            //Update the playlists.json file with the updated data
+            FileOutputStream playlistOutputStream = context.openFileOutput(jsonFileName, Context.MODE_PRIVATE);
+
+            String updatedData = String.format("{\"playlists\": %s}", playlistsJsonArray.toString());
+            byte[] JSONObjectBytes = updatedData.getBytes();
+            playlistOutputStream.write(JSONObjectBytes);
+
+            playlistOutputStream.close();
+            Log.d("./JSONPlaylistAdapter/addPlaylistToFile", "playlists.json file recreated!");
+
+        } catch (JSONException jsone) {
+            jsone.printStackTrace();
+            Log.d("./JSONPlaylistAdapter/addPlaylistToFile", "JSONException");
+            return;
+        } catch (FileNotFoundException fnfe) {
+            fnfe.printStackTrace();
+            Log.d("./JSONPlaylistAdapter/addPlaylistToFile", "FileNotFoundException");
+        }catch (IOException ioe) {
+            ioe.printStackTrace();
+        }
+
     }
 
     public ArrayList<Playlist> getPlaylistArray(){
+        // Get the ArrayList<Playlist> object stored within the adapter class
         if (playlistArrayList==null){
             return null;
         }
@@ -44,8 +106,9 @@ public class JSONPlaylistAdapter {
     }
 
     public void setPlaylistArray(){
+        // Takes the playlists in the playlists.json file and creates the ArrayList<Playlist> accordingly
         //TODO: Make this class able to read and write to a json file
-        JSONObject jsonObject = this.getPlaylists();
+        JSONObject jsonObject = getPlaylists();
         try{
             playlistArrayList = new ArrayList<Playlist>();
             JSONArray playlistsJsonArray = jsonObject.getJSONArray("playlists");
@@ -74,6 +137,8 @@ public class JSONPlaylistAdapter {
         } catch (JSONException jsone) {
             Log.d("./JSONPlaylistAdapter", "JSONException");
             jsone.printStackTrace();
+        } catch (NullPointerException npe) {
+            createFile();
         }
 
         return;
@@ -81,7 +146,7 @@ public class JSONPlaylistAdapter {
 
     private JSONObject getPlaylists(){
         // Reads the playlist json file and gets playlists. If file does not exist, creates it.
-        jsonFileName = "playlists.json";
+//        jsonFileName = "playlists.json";
         InputStream playlistInputStream;
         // If file already exists
         try {
@@ -98,7 +163,8 @@ public class JSONPlaylistAdapter {
             return inputJSONObject;
         // If file doesn't exist
         } catch (IOException ioe) {
-
+            ioe.printStackTrace();
+            createFile();
         // Unforeseen exception
         } catch (Exception e){
             Log.d(".JSONPlaylistAdapter.java", "Unforeseen Error");
@@ -107,11 +173,10 @@ public class JSONPlaylistAdapter {
     }
 
     public void createFile(){
-        jsonFileName = "playlists.json";
         try {
             FileOutputStream playlistOutputStream = context.openFileOutput(jsonFileName, Context.MODE_PRIVATE);
 
-            String emptyJSONArray = "[]";
+            String emptyJSONArray = "{\"playlists\": []}";
             byte[] emptyJSONArrayBytes = emptyJSONArray.getBytes();
             playlistOutputStream.write(emptyJSONArrayBytes);
             Log.d("./JSONPlaylistAdapter/createFile", "playlists.json file created!");
