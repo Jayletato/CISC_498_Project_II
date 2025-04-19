@@ -84,8 +84,8 @@ public class MusicFragment extends Fragment implements View.OnClickListener{
         testArrayList.add(testSong1);
         testArrayList.add(testSong2);
 
-        Playlist testPlaylist = new Playlist(testArrayList, "https://i.ytimg.com/vi/heyMNhMOa3c/default.jpg", "My favorite songs");
-        Playlist testPlaylist2 = new Playlist(testArrayList, "https://i.ytimg.com/vi/heyMNhMOa3c/default.jpg", "My second favorite songs");
+        Playlist testPlaylist = new Playlist(testArrayList, "https://i.ytimg.com/vi/heyMNhMOa3c/default.jpg", "HardCodedCase1");
+        Playlist testPlaylist2 = new Playlist(testArrayList, "https://i.ytimg.com/vi/heyMNhMOa3c/default.jpg", "HardCodedCase2");
         addPlaylist(testPlaylist, transaction);
         addPlaylist(testPlaylist2, transaction);
 //        addPlaylist(new Song(), fragmentManager);
